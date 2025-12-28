@@ -29,27 +29,26 @@ curl -o Saibius {your-download-url}
 
 Share a directory:
 ```bash
-./target/release/saibius --file /path/to/directory
+./Saibius --file /path/to/directory
 ```
 
 Share a single file:
 ```bash
-./target/release/saibius --file /path/to/file.txt
+./Saibius --file /path/to/file.txt
 ```
 
 Specify custom port and host:
 ```bash
-./target/release/saibius --file /path/to/directory --port 8080 --host 0.0.0.0
+./Saibius --file /path/to/directory --port 8080 --host 0.0.0.0
 ```
 
 ## Features
 
 ### Performance Optimizations
 
-Saibius implements several cutting-edge performance optimizations:
+Saibius implements several performance optimizations:
 
 #### Zero-Copy Transfer
-- Files under 1MB use `sendfile` for zero-copy kernel-space transfers
 - Larger files are streamed using optimized 64KB buffers
 - Minimizes memory usage and CPU overhead
 
@@ -89,23 +88,20 @@ Server also accessible at http://192.168.1.100:3200/
 
 ## Usage Examples
 
-### After cloning the repository:
+### After download binary:
 
 ```bash
-# Build the project
-cargo build --release
-
 # Share your home directory
-./target/release/saibius --file ~/
+./Saibius --file ~/
 
 # Share a specific project
-./target/release/saibius --file ./my-project --port 9000
+./Saibius --file ./my-project --port 9000
 
 # Make files available on your local network
-./target/release/saibius --file ./downloads --host 0.0.0.0 --port 8080
+./Saibius --file ./downloads --host 0.0.0.0 --port 8080
 
 # Share a single large video file
-./target/release/saibius --file ./movie.mp4
+./Saibius --file ./movie.mp4
 ```
 
 ### Integration with curl and wget
@@ -120,7 +116,7 @@ curl http://localhost:3200/filename.txt
 wget http://localhost:3200/filename.txt
 
 # Stream with range request (download first 1MB)
-curl -r 0-1048575 http://localhost:3200/largefile.zip
+curl -r 0-1048575 -o "largefile" http://localhost:3200/largefile.zip
 ```
 
 ## Technology Stack
@@ -168,26 +164,17 @@ Saibius implements robust error handling:
 - Path traversal protection
 - Detailed error messages with suggested solutions
 
-## Contributing
-
-Built with passion for efficient file sharing. Contributions welcome in areas of:
-
-- Performance optimizations
-- Additional platform support
-- UI/UX improvements
-- Documentation enhancements
-
 ### Downloading Releases
 
-Download pre-built binaries from the [Releases page](https://github.com/mirseo/Saibius/releases):
+Download binaries from the [Accounts page](https://saibius.com/accounts):
 
-- **Windows**: `Saibius-windows-x86_64.exe`
-- **Linux**: `Saibius-linux-x86_64`
-- **macOS**: `Saibius-macos-x86_64`
+- **Windows**: `Saibius.exe`
+- **Linux**: `Saibius`
+- **macOS**: `Saibius-macos`
 
 Make the binary executable on Unix systems:
 ```bash
-chmod +x Saibius-linux-x86_64  # or Saibius-macos-x86_64
+chmod +x Saibius  # or Saibius-macos
 ```
 
 ## License
