@@ -29,17 +29,17 @@ curl -o Saibius {your-download-url}
 
 Share a directory:
 ```bash
-./Saibius --file /path/to/directory
+./Saibius --share /path/to/directory
 ```
 
 Share a single file:
 ```bash
-./Saibius --file /path/to/file.txt
+./Saibius --share /path/to/file.txt
 ```
 
 Specify custom port and host:
 ```bash
-./Saibius --file /path/to/directory --port 8080 --host 0.0.0.0
+./Saibius --share /path/to/directory --port 8080 --host 0.0.0.0
 ```
 
 ## Features
@@ -82,7 +82,7 @@ Server also accessible at http://192.168.1.100:3200/
 
 | Option | Short | Description | Default |
 |--------|-------|-------------|---------|
-| `--file` | `-f` | Path to file or directory to share | **Required** |
+| `--file` /  `--share` | `-f` | Path to file or directory to share | **Required** |
 | `--port` | `-p` | Port to bind to | 3200 |
 | `--host` | `-h` | Host address to bind to | 127.0.0.1 |
 
@@ -92,16 +92,16 @@ Server also accessible at http://192.168.1.100:3200/
 
 ```bash
 # Share your home directory
-./Saibius --file ~/
+./Saibius --share ~/
 
 # Share a specific project
-./Saibius --file ./my-project --port 9000
+./Saibius --share ./my-project --port 9000
 
 # Make files available on your local network
-./Saibius --file ./downloads --host 0.0.0.0 --port 8080
+./Saibius --share ./downloads --host 0.0.0.0 --port 8080
 
 # Share a single large video file
-./Saibius --file ./movie.mp4
+./Saibius --share ./movie.mp4
 ```
 
 ### Integration with curl and wget
@@ -166,13 +166,12 @@ Saibius implements robust error handling:
 
 ### Downloading Releases  
 
-Quick Update! Our next minor version (v1.0.0.11) will support the --share method for sharing, just like the --file method. Don’t worry, we’re keeping the original --file method too—this is just a little update to make things more convenient for you!  
-
 Download binaries from the [Accounts page](https://saibius.com/accounts):
 
 - **Windows**: `Saibius.exe`
 - **Linux**: `Saibius`
 - **macOS**: `Saibius-macos`
+- **Android(Termux)** : `comming (v1.0.0.11 or later)`
 
 Make the binary executable on Unix systems:
 ```bash
@@ -190,6 +189,8 @@ See the LICENSE (EULA) file for full details.
 
 ---
 
-**Saibius** - Because your files deserve to fly. 🚀
+**Saibius** - Because your files deserve to fly. 🚀  
+
+P.s For zero-copy, simultaneous download, and idm tests, please refer to the ./test folder.  
 
 <a href="https://www.producthunt.com/products/saibius?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-saibius" target="_blank" rel="noopener noreferrer"><img alt="Saibius - Lightning-fast file sharing. Simple, secure, and unlimited. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1055278&amp;theme=light&amp;t=1766996889767"></a>
