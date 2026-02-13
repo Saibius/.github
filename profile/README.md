@@ -1,5 +1,4 @@
 # Saibius
-[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/2f6d4.svg)](https://uptime.betterstack.com/?utm_source=status_badge)  
 **Instant File Sharing for Server Management**
 
 A blazing-fast, lightweight web server designed for instant file and directory sharing. Built with Rust's performance-first architecture, Saibius serves files of any size over HTTP without authentication, making it perfect for server management and rapid data transfer.
@@ -186,6 +185,8 @@ may be reproduced, modified, or distributed without explicit written permission
 from the copyright holder.
 
 See the LICENSE (EULA) file for full details.
+
+[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/2f6d4.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
 
 ---
 
